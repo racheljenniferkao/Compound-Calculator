@@ -1,0 +1,45 @@
+<!--pages/calculator/calculator.wxml-->
+<view class="lang">
+<p>English <switch bindchange='langChange' name="switch"/> <text>中文\n</text></p>
+</view>
+<view class="title">
+<text class="title">{{label[7]}}\n</text>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view>
+  <text>{{label[0]}}</text> 
+  <input id="principal" bindchange="bindTextChange" type="text" maxlength="-1" placeholder='input an amount'></input>
+</view>
+<view>
+  <text>{{label[1]}}</text> 
+  <input id="interest" bindchange="bindTextChange" type="text" maxlength="-1" placeholder='input a percentage (Decimal)'></input>
+</view>
+<view>
+  <view id="compound">{{label[2]}}</view>
+  <picker id="compoundPicker" class="picker" bindchange="bindPickerChange" value="{{compoundIdx}}" range="{{compoundArray}}">
+    <view>
+      {{label[8]}}{{compoundArray[compoundIdx]}}
+    </view>
+  </picker>
+</view>
+<view>
+  <text id="duration">{{label[3]}}</text> 
+  <input id="duration" bindchange="bindTextChange" type="text" maxlength="-1" placeholder='input the number of years'></input>
+</view>
+<view>
+  <text id="addition">{{label[4]}}</text> 
+  <input id="addition" bindchange="bindTextChange" type="text" maxlength="-1" placeholder='input the addition amount'></input>
+   <picker id="addtionPicker"class="picker" bindchange="bindPickerChange" value="{{additionIdx}}" range="{{additionArray}}">
+    <view>
+      {{label[8]}}{{additionArray[additionIdx]}}
+    </view>
+  </picker>
+</view>
+<view>
+  <button bindtap='futureValueCalculations' class="submit">{{label[5]}}</button> 
+  <button bindtap='resetBug' form-type='reset' class="reset">{{label[6]}}</button>
+</view>
+<view>
+  <text>{{text}}</text>
+</view>
+</form>

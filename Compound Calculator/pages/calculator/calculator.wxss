@@ -1,0 +1,21 @@
+/* pages/calculator/calculator.wxss */
+.picker {
+  background-color: pink;
+  color: white;
+  padding: 10px;
+}
+.title {
+  text-align: center;
+  font-size: 18px; 
+}
+.lang {
+  text-align: center;
+  font-size: 14px;
+}
+.submit {
+  background-color:dimgrey;
+  color: white;
+}
+switch {
+  size: small;
+}
